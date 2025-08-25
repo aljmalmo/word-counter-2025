@@ -44,18 +44,19 @@
 
 
 
-<!-- CSS -->
+            <!-- CSS -->
 <style>
 .article-btn {
     position: fixed;
-    top: 20px;
-    left: 50%;              /* في منتصف الصفحة */
-    transform: translateX(-50%); /* عشان يبقى مظبوط بالظبط */
+    bottom: 25px;
+    right: 25px;
     z-index: 9999;
 
-    display: inline-block;
-    min-width: 180px;       /* أصغر من 230px */
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
 
     background: linear-gradient(270deg, 
         #ff4e50, #fc913a, #f9d423, 
@@ -63,18 +64,35 @@
     );
     background-size: 1500% 1500%;
 
-    color: white;
-    padding: 10px 25px;     /* تصغير الحواف */
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 15px;        /* تصغير حجم الخط */
-    text-decoration: none;
+    border-radius: 50%;
+    cursor: pointer;
 
     opacity: 0; /* بيبدأ مخفي */
+    border: none;
     
     animation: 
         gradientShift 12s ease infinite,
         glow 4s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* أيقونة السهم */
+.article-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Hover */
+.article-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 30px rgba(255,255,255,0.9),
+                0 0 60px rgba(255,255,255,0.6);
+}
+
+.article-btn:hover svg {
+    transform: translateY(-4px); /* حركة للأيقونة */
 }
 
 /* أنيميشن ظهور/اختفاء (توهج + fade in/out) */
@@ -91,15 +109,37 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
-/* Hover (يزود الجاذبية) */
-.article-btn:hover {
-    transform: translateX(-50%) scale(1.08); /* مهم نحافظ على التمركز */
-    box-shadow: 0 0 30px rgba(255,255,255,0.9),
-                0 0 60px rgba(255,255,255,0.6);
-}
 </style>
 
+<!-- HTML -->
+<button class="article-btn" id="backToTop">
+  <!-- SVG سهم أنيق -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M12 4l-7 8h4v8h6v-8h4z"/>
+  </svg>
+</button>
+
+<!-- JS -->
+<script>
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTop.style.opacity = "1";
+    backToTop.style.pointerEvents = "auto";
+  } else {
+    backToTop.style.opacity = "0";
+    backToTop.style.pointerEvents = "none";
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+
+            
 <!-- HTML -->
 <a href="https://algmmal.com/word-counter/" class="article-btn">
     تطبيق حساب عدد الحروف والكلمات
