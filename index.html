@@ -13,8 +13,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="حساب عدد الكلمات والحروف: دليلك الشامل لتحسين محتواك الرقمي والسيو">
     <meta name="twitter:description" content="دليل شامل لحساب عدد الكلمات والحروف، أفضل الأدوات والطرق، وأهمية ذلك في تحسين محركات البحث (SEO).">
-        <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
+    
 
 
 <style>
@@ -28,34 +27,51 @@
     --primary-color: #4a6cf7;
     --secondary-color: #6a11cb;
     --text-color: #2c3e50;
-    --background-color: #f8faff;
+    --background-color: #f9fbff;
     --white: #ffffff;
 }
 
 body {
     font-family: 'Inter', system-ui, sans-serif;
-    line-height: 1.7;
+    line-height: 1.8;
     color: var(--text-color);
-    background: linear-gradient(135deg, #f8faff 0%, #eef3ff 100%);
-    padding: 0;
-    margin: 0;
+    background: var(--background-color);
 }
 
 /* ===== الهيدر ===== */
 .header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem;
     text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     position: relative;
     overflow: hidden;
 }
 
+.header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+    animation: pulse 8s infinite linear;
+}
+
+@keyframes pulse {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
 .header h1 {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 2.4rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    color: #fff;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 
 .header p {
@@ -67,122 +83,111 @@ body {
 
 /* ===== المحتوى ===== */
 .content {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
-}
-
-.toc {
-    background: #ffffffcc;
-    backdrop-filter: blur(6px);
-    border-radius: 14px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border: 1px solid #e0e7ff;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-}
-
-.toc h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.toc a {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: var(--text-color);
-    border-radius: 8px;
-    transition: all 0.3s;
-    text-decoration: none;
-}
-
-.toc a:hover {
-    background: var(--primary-color);
-    color: var(--white);
-    transform: translateX(6px);
+    max-width: 850px;
+    margin: 2.5rem auto;
+    padding: 0 1.2rem;
 }
 
 /* ===== العناوين ===== */
 h1, h2, h3 {
     margin: 2rem 0 1rem;
-    line-height: 1.3;
+    line-height: 1.4;
     font-weight: 700;
 }
 
 h1 {
-    font-size: 2.4rem;
+    font-size: 2rem;
     color: var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.3rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: var(--secondary-color);
-    border-left: 5px solid var(--primary-color);
-    padding-left: 0.8rem;
 }
 
 h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--text-color);
 }
 
 /* ===== النصوص ===== */
 p {
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
 }
 
-/* ===== صناديق مميزة ===== */
-.highlight-box, .info-box, .success-box {
-    border-radius: 12px;
-    padding: 1.3rem;
-    margin: 2rem 0;
-    border-left: 6px solid;
+/* ===== فهرس ===== */
+.toc {
     background: #fff;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    border: 1px solid #e5e9ff;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.toc h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+}
+
+.toc a {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    color: var(--text-color);
+    border-radius: 6px;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    background: #f0f4ff;
+    color: var(--primary-color);
+}
+
+/* ===== صناديق ===== */
+.highlight-box, .info-box, .success-box {
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-left: 5px solid;
+    background: #fff;
+    border: 1px solid #eee;
 }
 
 .highlight-box { border-left-color: #e74c3c; }
 .info-box { border-left-color: #3498db; }
 .success-box { border-left-color: #27ae60; }
 
-/* ===== الجدول ===== */
+/* ===== جدول ===== */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 2rem 0;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
 }
 
 th, td {
-    padding: 1rem;
+    padding: 0.9rem;
     text-align: right;
-    border-bottom: 1px solid #e0e7ff;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 th {
     background: var(--primary-color);
     color: var(--white);
-    font-weight: 600;
-}
-
-tr:hover {
-    background-color: #f4f7ff;
 }
 
 /* ===== الفوتر ===== */
 .footer {
-    margin-top: 3rem;
-    padding: 2rem;
+    margin-top: 2.5rem;
+    padding: 1.5rem;
     text-align: center;
     background: var(--text-color);
     color: var(--white);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 /* ===== زر العودة للأعلى ===== */
@@ -190,32 +195,94 @@ tr:hover {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: var(--white);
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
     transition: all 0.3s ease;
     opacity: 0;
     visibility: hidden;
+    z-index: 1000;
 }
+
 .scroll-to-top.visible {
     opacity: 1;
     visibility: visible;
 }
+
 .scroll-to-top:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
+    background: var(--secondary-color);
+}
+
+/* أيقونة السهم */
+.scroll-to-top svg {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
 }
 </style>
 
+<!-- HTML لزر العودة للأعلى -->
+<div class="scroll-to-top" id="scrollTopBtn">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M12 4l-8 8h6v8h4v-8h6z"/>
+  </svg>
+</div>
 
 
-    
+<!-- HTML (زي ما هو) -->
+<div class="scroll-to-top" id="scrollTopBtn" role="button" aria-label="العودة للأعلى">
+  <!-- SVG سهم أنيق -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M12 4l-8 8h6v8h4v-8h6z"/>
+  </svg>
+</div>
+
+<!-- JS: ضع هذا قبل وسم </body> مباشرة -->
+<script>
+(() => {
+  const btn = document.getElementById('scrollTopBtn');
+  if (!btn) return;
+
+  // إظهار/إخفاء الزر حسب مقدار التمرير
+  const toggle = () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  };
+
+  window.addEventListener('scroll', toggle, { passive: true });
+  window.addEventListener('load', toggle); // ضبط الحالة عند التحميل
+
+  // الصعود لأعلى بسلاسة عند الضغط
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // دعم الكيبورد للوصولية
+  btn.tabIndex = 0;
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+})();
+</script>
+
+
+
+
+
 </head>
 <body>
     <div class="container">
@@ -239,363 +306,70 @@ tr:hover {
 
 
 
- <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+<!-- CSS -->
+<style>
+.article-btn {
+    position: fixed;
+    top: 20px;
+    left: 50%;              /* في منتصف الصفحة */
+    transform: translateX(-50%); /* عشان يبقى مظبوط بالظبط */
+    z-index: 9999;
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
+    display: inline-block;
+    min-width: 180px;       /* أصغر من 230px */
+    text-align: center;
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+    background: linear-gradient(270deg, 
+        #ff4e50, #fc913a, #f9d423, 
+        #24fe41, #24c6dc, #514a9d, #ff6a88
+    );
+    background-size: 1500% 1500%;
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-        }
+    color: white;
+    padding: 10px 25px;     /* تصغير الحواف */
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;        /* تصغير حجم الخط */
+    text-decoration: none;
 
-        .header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+    opacity: 0; /* بيبدأ مخفي */
+    
+    animation: 
+        gradientShift 12s ease infinite,
+        glow 4s ease-in-out infinite;
+}
 
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+/* أنيميشن ظهور/اختفاء (توهج + fade in/out) */
+@keyframes glow {
+  0%   { opacity: 0;   box-shadow: 0 0 5px rgba(255,255,255,0.1); }
+  50%  { opacity: 1;   box-shadow: 0 0 20px rgba(255,255,255,0.7),
+                               0 0 40px rgba(255,255,255,0.4); }
+  100% { opacity: 0;   box-shadow: 0 0 5px rgba(255,255,255,0.1); }
+}
 
-        .content {
-            padding: 3rem 2rem;
-        }
+/* أنيميشن تغيير الألوان */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-        .toc {
-            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            border-left: 5px solid #667eea;
-        }
+/* Hover (يزود الجاذبية) */
+.article-btn:hover {
+    transform: translateX(-50%) scale(1.08); /* مهم نحافظ على التمركز */
+    box-shadow: 0 0 30px rgba(255,255,255,0.9),
+                0 0 60px rgba(255,255,255,0.6);
+}
+</style>
 
-        .toc h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
+<!-- HTML -->
+<a href="https://algmmal.com/word-counter/" class="article-btn">
+    تطبيق حساب عدد الحروف والكلمات
+</a>
 
-        .toc ul {
-            list-style: none;
-        }
 
-        .toc li {
-            margin-bottom: 0.5rem;
-        }
 
-        .toc a {
-            color: #555;
-            text-decoration: none;
-            padding: 0.5rem 0;
-            display: block;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            padding-left: 1rem;
-        }
-
-        .toc a:hover {
-            color: #667eea;
-            background: rgba(102, 126, 234, 0.1);
-            transform: translateX(10px);
-        }
-
-        h1, h2, h3 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 1rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: #667eea;
-            position: relative;
-            padding-left: 1rem;
-        }
-
-        h2::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            color: #34495e;
-            margin-top: 2rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            text-align: justify;
-            font-size: 1.1rem;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
-            border-left: 5px solid #e74c3c;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.1);
-        }
-
-        .info-box {
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
-            border-left: 5px solid #3498db;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
-        }
-
-        .success-box {
-            background: linear-gradient(135deg, #f0fff4 0%, #e6ffed 100%);
-            border-left: 5px solid #27ae60;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.1);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: right;
-            border-bottom: 1px solid #eee;
-        }
-
-        th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        tr:hover {
-            background: rgba(102, 126, 234, 0.05);
-            transform: scale(1.01);
-            transition: all 0.3s ease;
-        }
-
-        ul, ol {
-            margin: 1.5rem 0;
-            padding-right: 2rem;
-        }
-
-        li {
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        .step-list {
-            counter-reset: step-counter;
-            list-style: none;
-            padding-right: 0;
-        }
-
-        .step-list li {
-            counter-increment: step-counter;
-            position: relative;
-            padding-right: 3rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
-            padding: 1rem 1rem 1rem 3rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .step-list li::before {
-            content: counter(step-counter);
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .footer {
-            background: #2c3e50;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        .references {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-        }
-
-        .references h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        .references ol {
-            padding-right: 1rem;
-        }
-
-        .references a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        .references a:hover {
-            text-decoration: underline;
-        }
-
-        .scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            left: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .scroll-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 1rem;
-                border-radius: 15px;
-            }
-
-            .header {
-                padding: 2rem 1rem;
-            }
-
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .content {
-                padding: 2rem 1rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            table {
-                font-size: 0.9rem;
-            }
-
-            th, td {
-                padding: 0.5rem;
-            }
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-
-            
 
             <section id="introduction" class="fade-in">
                 <p>في عصرنا الرقمي المتسارع، حيث يتدفق المحتوى كالسيل الجارف، أصبح الاهتمام بأدق التفاصيل المتعلقة بالنصوص أمرًا بالغ الأهمية. لم يعد الأمر مقتصرًا على جودة المحتوى فحسب، بل امتد ليشمل جوانب تقنية دقيقة مثل "عدد الكلمات" و"عدد الحروف". قد تبدو هذه المفاهيم بسيطة للوهلة الأولى، ولكنها تحمل في طياتها تأثيرًا عميقًا على فعالية المحتوى، سواء كان ذلك في سياق أكاديمي، مهني، أو الأهم من ذلك، في عالم تحسين محركات البحث (SEO).</p>
@@ -793,21 +567,11 @@ tr:hover {
                 <p>إن فهمك لهذه الجوانب وتمكنك من استخدام الأدوات المناسبة سيمنحك ميزة تنافسية كبيرة في أي مجال يتطلب إنتاج محتوى مكتوب. لذا، ندعوك لتطبيق هذه المعرفة، واستكشاف الأدوات المتاحة، والبدء في إنشاء محتوى ليس فقط غنيًا بالمعلومات، بل ومُحسّنًا بذكاء ليحقق أقصى قدر من الوصول والتأثير في عالمنا الرقمي المتطور.</p>
             </section>
 
-            <div class="references fade-in">
-                <h3>المراجع</h3>
-                <ol>
-                    <li>Ahrefs. (n.d.). <em>Word Count for SEO: Does it Really Matter?</em> Retrieved from <a href="https://aioseo.com/word-count-for-seo/" target="_blank">https://aioseo.com/word-count-for-seo/</a></li>
-                    <li>ClickSlice. (2023, November 15). <em>The Importance of Word Count in SEO: Finding the Right Balance</em>. Retrieved from <a href="https://www.clickslice.co.uk/importance-of-seo-word-count/" target="_blank">https://www.clickslice.co.uk/importance-of-seo-word-count/</a></li>
-                    <li>Wikipedia. (n.d.). <em>Words per minute</em>. Retrieved from <a href="https://en.wikipedia.org/wiki/Words_per_minute" target="_blank">https://en.wikipedia.org/wiki/Words_per_minute</a></li>
-                    <li>American Academy of Pediatrics. (n.d.). <em>Language Development in Toddlers</em>. Retrieved from <a href="https://www.healthychildren.org/English/ages-stages/toddler/Pages/Language-Development-in-Toddlers.aspx" target="_blank">https://www.healthychildren.org/English/ages-stages/toddler/Pages/Language-Development-in-Toddlers.aspx</a></li>
-                    <li>Numerology.com. (n.d.). <em>Name Numerology</em>. Retrieved from <a href="https://www.numerology.com/articles/your-numerology-chart/name-numerology/" target="_blank">https://www.numerology.com/articles/your-numerology-chart/name-numerology/</a></li>
-                </ol>
-            </div>
+          
         </div>
 
         <footer class="footer">
-            <p>&copy; 2024 Manus AI. جميع الحقوق محفوظة.</p>
-            <p>تم إنشاء هذا المقال بواسطة الذكاء الاصطناعي لتقديم معلومات شاملة ومفيدة حول حساب عدد الكلمات والحروف.</p>
+            <p>&copy; 2025 algmmal.com. جميع الحقوق محفوظة.</p>
         </footer>
     </div>
 
