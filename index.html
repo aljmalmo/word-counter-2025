@@ -17,6 +17,201 @@
 
 
 
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4a6cf7;
+    --secondary-color: #6a11cb;
+    --text-color: #2c3e50;
+    --background-color: #f8faff;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #f8faff 0%, #eef3ff 100%);
+    padding: 0;
+    margin: 0;
+}
+
+/* ===== الهيدر ===== */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.header p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ===== المحتوى ===== */
+.content {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.toc {
+    background: #ffffffcc;
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e0e7ff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.toc h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.toc a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    border-radius: 8px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateX(6px);
+}
+
+/* ===== العناوين ===== */
+h1, h2, h3 {
+    margin: 2rem 0 1rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    border-left: 5px solid var(--primary-color);
+    padding-left: 0.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+/* ===== النصوص ===== */
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+/* ===== صناديق مميزة ===== */
+.highlight-box, .info-box, .success-box {
+    border-radius: 12px;
+    padding: 1.3rem;
+    margin: 2rem 0;
+    border-left: 6px solid;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.highlight-box { border-left-color: #e74c3c; }
+.info-box { border-left-color: #3498db; }
+.success-box { border-left-color: #27ae60; }
+
+/* ===== الجدول ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: right;
+    border-bottom: 1px solid #e0e7ff;
+}
+
+th {
+    background: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f4f7ff;
+}
+
+/* ===== الفوتر ===== */
+.footer {
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+    background: var(--text-color);
+    color: var(--white);
+    font-size: 0.95rem;
+}
+
+/* ===== زر العودة للأعلى ===== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.scroll-to-top:hover {
+    transform: translateY(-6px);
+}
+</style>
 
 
 
